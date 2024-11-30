@@ -10,7 +10,7 @@ DEFCONFIG=nogravity_defconfig
 #DEFCONFIG=beryllium_defconfig
 COMPILER=clang
 LINKER=""
-COMPILERDIR="/media/pierre/Expension/Android/PocophoneF1/Kernels/Proton-Clang"
+COMPILERDIR="/workspace/clang"
 
 # Outputs
 mkdir out/outputs
@@ -21,8 +21,8 @@ mkdir out/outputs/${PHONE}/10.3.7-SE
 mkdir out/outputs/${PHONE}/10.3.7-NSE
 
 # Export shits
-export KBUILD_BUILD_USER=Pierre2324
-export KBUILD_BUILD_HOST=G7-7588
+export KBUILD_BUILD_USER=haikaru17
+export KBUILD_BUILD_HOST=FX505DT
 
 # Speed up build process
 MAKE="./makeparallel"
@@ -59,7 +59,7 @@ OBJCOPY=llvm-objcopy \
 OBJDUMP=llvm-objdump \
 STRIP=llvm-strip \
 ld-name=${LINKER} \
-KBUILD_COMPILER_STRING="Proton Clang"
+KBUILD_COMPILER_STRING="Clang"
 }
 
 # Make defconfig
@@ -90,7 +90,7 @@ then
 else
     echo "Build succesful"
     cp out/arch/arm64/boot/Image.gz-dtb out/outputs/${PHONE}/9.1.24-SE/Image.gz-dtb
-    
+
     #9.1.24-NSE
     cp arch/arm64/boot/dts/qcom/SE_NSE/NSE/* arch/arm64/boot/dts/qcom/
     Build
